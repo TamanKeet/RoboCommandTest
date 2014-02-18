@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.tamankeet.frc3933.commands.CommandBase;
 import org.tamankeet.frc3933.commands.ExampleCommand;
+import org.tamankeet.frc3933.commands.returnUltrasonic;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -24,7 +25,7 @@ import org.tamankeet.frc3933.commands.ExampleCommand;
  */
 public class Main extends IterativeRobot {
 
-    Command autonomousCommand;
+    Command ultrasonicRead;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -32,7 +33,7 @@ public class Main extends IterativeRobot {
      */
     public void robotInit() {
         // instantiate the command used for the autonomous period
-        autonomousCommand = new ExampleCommand();
+        ultrasonicRead = new returnUltrasonic();
 
         // Initialize all subsystems
         CommandBase.init();
@@ -40,7 +41,6 @@ public class Main extends IterativeRobot {
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
-        autonomousCommand.start();
     }
 
     /**
@@ -55,7 +55,7 @@ public class Main extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-        autonomousCommand.cancel();
+        ultrasonicRead.cancel();
     }
 
     /**
@@ -63,6 +63,7 @@ public class Main extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        //ultrasonicRead.start();
     }
     
     /**

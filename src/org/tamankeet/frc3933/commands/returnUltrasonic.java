@@ -22,7 +22,8 @@ public class returnUltrasonic extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        
+        double distance = ultraSystem.getDistance();
+        System.out.println("Comando: " + distance);
     }
 
     // Make this return true when this Command no longer needs to run execute()

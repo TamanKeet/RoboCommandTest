@@ -23,7 +23,10 @@ public class Ultrasonic extends Subsystem {
     }
     
     public double getDistance(){
-        double distance = RobotMap.ultraSensor.getAverageVoltage()*206.47;
+        double voltage = RobotMap.ultraSensor.getAverageVoltage();
+        double distance = voltage*206.47;
+        System.out.println("Distancia leida: " + distance + 
+                " Voltaje average: " + voltage);
         return distance;
     }
 }

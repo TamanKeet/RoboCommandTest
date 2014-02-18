@@ -1,6 +1,7 @@
 package org.tamankeet.frc3933;
 
 import edu.wpi.first.wpilibj.AnalogChannel;
+import edu.wpi.first.wpilibj.Jaguar;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -19,5 +20,13 @@ public class RobotMap {
     // public static final int rangefinderPort = 1;
     // public static final int rangefinderModule = 1;
     
-    public static AnalogChannel ultraSensor = new AnalogChannel(1);
+    public static final int driveMotorRPort = 1;
+    public static final int driveMotorLPort = 2;
+    public static final int ultraSensorPort = 3;
+    
+    public static AnalogChannel ultraSensor = new AnalogChannel(ultraSensorPort);
+    
+    public static Jaguar driveMotorR = new Jaguar(driveMotorRPort);
+    public static Jaguar driveMotorL = new Jaguar(driveMotorLPort);
+    
 }
